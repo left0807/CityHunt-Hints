@@ -24,7 +24,7 @@ jobs:
         run: mkdir -p build
 
       - name: Copy HTML file
-        run: cp *.html build/*.html
+        run: cp *.html build/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
