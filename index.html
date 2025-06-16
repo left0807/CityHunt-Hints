@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #confirmBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #denyBtn {
+            background-color: #f44336;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Please Verify Your Age</h1>
+        <p>Enter your age:</p>
+        <input type="number" id="ageInput" min="0" max="150" placeholder="Age">
+        <div>
+            <button id="confirmBtn" onclick="verifyAge()">Confirm</button>
+            <button id="denyBtn" onclick="denyAccess()">Deny</button>
+        </div>
+    </div>
+    <script>
+        function verifyAge() {
+            const age = parseInt(document.getElementById('ageInput').value);
+            if (age >= 18) {
+                window.location.href = 'index2.html';
+            } else {
+                window.location.href = 'www.youtube.com/watch?v=XqZsoesa55w';
+            }
+        }
+
+        function denyAccess() {
+            window.location.href = 'www.youtube.com/watch?v=XqZsoesa55w';
+        }
+
+        // Allow Enter key to trigger age verification
+        document.getElementById('ageInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                verifyAge();
+            }
+        });
+    </script>
+</body>
+</html>
