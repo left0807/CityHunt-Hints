@@ -24,7 +24,7 @@ jobs:
         run: mkdir -p build
 
       - name: Copy HTML file
-        run: cp age-verification-v2.html build/index.html
+        run: cp index.html build/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
